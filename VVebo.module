@@ -3,7 +3,7 @@
 #!author=suiyuran
 
 [URL Rewrite]
-# 匹配带有 __vvebo_redirect=1 的请求，将其重写为新接口格式
+# 将带有 __vvebo_redirect=1 的请求从 user_timeline 重写为 profile/statuses/tab，并添加 containerid 参数
 ^https?://api\.weibo\.cn/2/statuses/user_timeline(\?.*)__vvebo_redirect=1&__vvebo_containerid=([^&]+)(.*)$ https://api.weibo.cn/2/profile/statuses/tab$1containerid=$2 302
 
 [Script]
