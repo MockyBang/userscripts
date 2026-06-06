@@ -3,8 +3,8 @@
 #!author=suiyuran
 
 [URL Rewrite]
-# 将带有 __vvebo_uid 参数的旧接口重写为新接口
-^https?://api\.weibo\.cn/2/statuses/user_timeline(\?.*)__vvebo_uid=(\d+)(.*)$ https://api.weibo.cn/2/profile/statuses/tab$1containerid=230413$2_-_WEIBO_SECOND_PROFILE_WEIBO 302
+# 匹配带有 __vvebo_redirect=1 的请求，将其重写为新接口格式
+^https?://api\.weibo\.cn/2/statuses/user_timeline(\?.*)__vvebo_redirect=1&__vvebo_containerid=([^&]+)(.*)$ https://api.weibo.cn/2/profile/statuses/tab$1containerid=$2 302
 
 [Script]
 
