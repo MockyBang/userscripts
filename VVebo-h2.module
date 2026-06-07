@@ -17,4 +17,5 @@ fix-vvebo-fans = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/cardl
 
 
 [MITM]
+h2 = true
 hostname = %INSERT% api.weibo.cn
